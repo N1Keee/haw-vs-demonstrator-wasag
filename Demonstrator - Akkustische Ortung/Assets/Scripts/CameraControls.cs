@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -7,6 +8,7 @@ public class CameraControls : MonoBehaviour
 {
 
     [SerializeField] private CinemachineVirtualCamera[] cameras;
+    [SerializeField] private CinemachineVirtualCamera zebCamera;
 
     public void NextCamera()
     {
@@ -25,6 +27,18 @@ public class CameraControls : MonoBehaviour
             {
                 c.Priority += cameras.Length;
             }
+        }
+    }
+
+    public void ToggleZEB()
+    {
+        if (zebCamera.Priority < 0)
+        {
+            zebCamera.Priority *= -1;
+        }
+        else
+        {
+            zebCamera.Priority *= -1;
         }
     }
 }
