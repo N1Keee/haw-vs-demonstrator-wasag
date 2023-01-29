@@ -1,9 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-public class Raycast : MonoBehaviour
+public class Raycaster : MonoBehaviour
 {
     public Camera cam;
+    private RaycastHit _hitInfo;
+    
     // Update is called once per frame
     void Update()
     {
@@ -16,15 +18,19 @@ public class Raycast : MonoBehaviour
     void ExecuteRaycast()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 100))
+        if (Physics.Raycast(ray, out _hitInfo, 100))
         {
-            Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-            Debug.Log(hitInfo.transform.name);
+            Debug.DrawLine(ray.origin, _hitInfo.point, Color.red);
+            Debug.Log(_hitInfo.transform.name);
         }
         else
         {
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.green);
         }
+    }
+
+    public RaycastHit GetRaycastHit()
+    {
+        return _hitInfo;
     }
 }

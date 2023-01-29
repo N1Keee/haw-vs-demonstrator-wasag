@@ -9,23 +9,29 @@ public class CameraControls : MonoBehaviour
 
     [SerializeField] private CinemachineVirtualCamera[] cameras;
     [SerializeField] private CinemachineVirtualCamera zebCamera;
-
+    
     public void NextCamera()
     {
-        foreach (CinemachineVirtualCamera c in cameras)
+        if (zebCamera.Priority < 0)
         {
-            c.Priority = (c.Priority + 1) % cameras.Length;
+            foreach (CinemachineVirtualCamera c in cameras)
+            {
+                c.Priority = (c.Priority + 1) % cameras.Length;
+            }
         }
     }
 
     public void PreviousCamera()
     {
-        foreach (CinemachineVirtualCamera c in cameras)
+        if (zebCamera.Priority < 0)
         {
-            c.Priority = (c.Priority - 1) % cameras.Length;
-            if (c.Priority < 0)
+            foreach (CinemachineVirtualCamera c in cameras)
             {
-                c.Priority += cameras.Length;
+                c.Priority = (c.Priority - 1) % cameras.Length;
+                if (c.Priority < 0)
+                {
+                    c.Priority += cameras.Length;
+                }
             }
         }
     }
