@@ -10,7 +10,7 @@ public class DollyLogic : MonoBehaviour
 
     void Loop()
     {
-        virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition += (1) * (moveSpeed * (Time.deltaTime));
+        virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition += (0.05f) * (moveSpeed * (Time.deltaTime));
         
         if (virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition > 1)
         {
