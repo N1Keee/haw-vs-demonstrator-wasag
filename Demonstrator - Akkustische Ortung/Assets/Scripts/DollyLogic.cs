@@ -8,7 +8,7 @@ public class DollyLogic : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private float moveSpeed;
 
-    void Loop()
+    public void Loop()
     {
         virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition += (0.05f) * (moveSpeed * (Time.deltaTime));
         
@@ -24,6 +24,6 @@ public class DollyLogic : MonoBehaviour
     
     void Update()
     {
-        Loop();
+        // Loop();
     }
 }

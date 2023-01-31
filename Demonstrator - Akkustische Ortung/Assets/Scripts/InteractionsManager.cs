@@ -8,11 +8,11 @@ public class InteractionsManager : MonoBehaviour
 {
     [SerializeField] private List<Interaction> interactionsDemo;
     [SerializeField] private TextMeshProUGUI instructionText;
-    [SerializeField] private TextMeshProUGUI helpText;
-    [SerializeField] private TextMeshProUGUI errorText;
+    //[SerializeField] private TextMeshProUGUI helpText;
+    //[SerializeField] private TextMeshProUGUI errorText;
 
-    [SerializeField] private int errorCount;
-    [SerializeField] private int helpCount;
+    //[SerializeField] private int errorCount;
+    //[SerializeField] private int helpCount;
 
     [SerializeField] private GameObject geophone;
 
@@ -36,6 +36,7 @@ public class InteractionsManager : MonoBehaviour
                 interaction.virtualCamera.Priority = 0;
             }
             interactionsDemo[i].virtualCamera.Priority = 1;
+            instructionText.SetText(interactionsDemo[i].instruction);
         }
     }
     
@@ -72,6 +73,10 @@ public class InteractionsManager : MonoBehaviour
 
     private void Update()
     {
+        if (_i == 0)
+        {
+            interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
+        }
         if (interactionsDemo[_i].gameObject.Equals(geophone))
         {
             interactionsDemo[_i].gameObject.GetComponent<Elevator>().upwards = true;
