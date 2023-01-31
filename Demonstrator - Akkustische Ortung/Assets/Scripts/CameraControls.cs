@@ -8,7 +8,9 @@ public class CameraControls : MonoBehaviour
 {
 
     [SerializeField] private CinemachineVirtualCamera[] cameras;
+    [SerializeField] private CinemachineVirtualCamera dollyCamera;
     [SerializeField] private CinemachineVirtualCamera zebCamera;
+    [SerializeField] private float moveSpeed;
     
     public void NextCamera()
     {
@@ -45,6 +47,24 @@ public class CameraControls : MonoBehaviour
         else
         {
             zebCamera.Priority *= -1;
+        }
+    }
+
+    private void Loop()
+    {
+        dollyCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition += (0.05f) * (moveSpeed * (Time.deltaTime));
+        
+        if (dollyCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition > 1)
+        {
+            dollyCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = 0;
+        }
+    }
+
+    private void Update()
+    {
+        if (dollyCamera.Priority == cameras.Length - 1)
+        {
+            Loop();
         }
     }
 }
