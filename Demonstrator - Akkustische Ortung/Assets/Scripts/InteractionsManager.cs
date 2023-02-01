@@ -81,40 +81,29 @@ public class InteractionsManager : MonoBehaviour
         {
             case 0:
                 interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
-                geophone.gameObject.GetComponent<Elevator>().upwards = false;
+                geophone.GetComponent<Elevator>().upwards = false;
+                break;
+            case 1:
+                geophone.GetComponent<Replacer>().PlaceAtEquipment();
+                geophone.GetComponent<Elevator>().upwards = false;
                 break;
             case 2:
-                geophone.gameObject.GetComponent<Elevator>().upwards = true;
+                geophone.GetComponent<Elevator>().upwards = true;
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 break;
             case 3:
                 debrisConcrete.GetComponent<Highlighter>().Highlight();
-                geophone.gameObject.GetComponent<Elevator>().upwards = false;
+                geophone.GetComponent<Replacer>().PlaceAtEquipment();
+                break;
+            case 4:
+                debrisConcrete.GetComponent<Highlighter>().DeHighlight();
+                geophone.GetComponent<Elevator>().upwards = false;
+                geophone.GetComponent<Replacer>().PlaceOnPile();
                 break;
             default:
                 geophone.GetComponent<Elevator>().upwards = false;
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 break;
         }
-        /*
-        if (_i == 0)
-        {
-            interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
-        }
-        if (interactionsDemo[_i].gameObject.Equals(geophone)) 
-        {
-            interactionsDemo[_i].gameObject.GetComponent<Elevator>().upwards = true;
-        }
-        if (interactionsDemo[_i].gameObject.Equals(debrisConcrete)) // _i == 3
-        {
-            interactionsDemo[_i].gameObject.GetComponent<Highlighter>().Highlight();
-        }
-        else
-        {
-            geophone.GetComponent<Elevator>().upwards = false;
-            //geophone.GetComponent<Elevator>().MoveAccordingly();
-            debrisConcrete.GetComponent<Highlighter>().DeHighlight();
-        }
-        */
     }
 }
