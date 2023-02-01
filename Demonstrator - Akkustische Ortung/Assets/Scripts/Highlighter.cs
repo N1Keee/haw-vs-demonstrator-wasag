@@ -8,7 +8,6 @@ public class Highlighter : MonoBehaviour
 
     public void Highlight()
     {
-        Debug.Log("highlighting...");
         foreach (var piece in debrisPieces)
         {
             piece.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
@@ -17,7 +16,6 @@ public class Highlighter : MonoBehaviour
     
     public void DeHighlight()
     {
-        Debug.Log("dehighlighting...");
         foreach (var piece in debrisPieces)
         {
             piece.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");

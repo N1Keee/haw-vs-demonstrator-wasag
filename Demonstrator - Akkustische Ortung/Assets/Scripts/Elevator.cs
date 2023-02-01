@@ -17,7 +17,7 @@ public class Elevator : MonoBehaviour
         _yBorder = _yRoot + 1;
     }
 
-    public void MoveAccordingly()
+    private void MoveAccordingly()
     {
         if (upwards)
         {
@@ -33,5 +33,10 @@ public class Elevator : MonoBehaviour
                 transform.Translate(new Vector3(0,1 * (-ySpeed * Time.deltaTime),0));
             }
         }
+    }
+
+    private void Update()
+    {
+        MoveAccordingly();
     }
 }

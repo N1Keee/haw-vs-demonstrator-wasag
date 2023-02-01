@@ -21,7 +21,7 @@ public class InteractionsManager : MonoBehaviour
 
     private void LoadInteraction(int i)
     {
-        Debug.Log(_i);
+        Debug.Log("Loading Interaction, _i: " + _i + " i: " + i);
         if (i == interactionsDemo.Count)
         {
             // do nothing
@@ -51,6 +51,7 @@ public class InteractionsManager : MonoBehaviour
         {
             LoadInteraction( _i + 1);
             _i += 1;
+            Debug.Log("_i now: " + _i);
         }
     }
 
@@ -64,6 +65,7 @@ public class InteractionsManager : MonoBehaviour
         {
             LoadInteraction(_i - 1);
             _i -= 1;
+            Debug.Log("_i now: " + _i);
         }
     }
     
@@ -74,25 +76,45 @@ public class InteractionsManager : MonoBehaviour
 
     private void Update()
     {
+
+        switch (_i)
+        {
+            case 0:
+                interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
+                geophone.gameObject.GetComponent<Elevator>().upwards = false;
+                break;
+            case 2:
+                geophone.gameObject.GetComponent<Elevator>().upwards = true;
+                debrisConcrete.GetComponent<Highlighter>().DeHighlight();
+                break;
+            case 3:
+                debrisConcrete.GetComponent<Highlighter>().Highlight();
+                geophone.gameObject.GetComponent<Elevator>().upwards = false;
+                break;
+            default:
+                geophone.GetComponent<Elevator>().upwards = false;
+                debrisConcrete.GetComponent<Highlighter>().DeHighlight();
+                break;
+        }
+        /*
         if (_i == 0)
         {
             interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
         }
-        // + 
-        if (interactionsDemo[_i].gameObject.Equals(geophone))
+        if (interactionsDemo[_i].gameObject.Equals(geophone)) 
         {
             interactionsDemo[_i].gameObject.GetComponent<Elevator>().upwards = true;
-            interactionsDemo[_i].gameObject.GetComponent<Elevator>().MoveAccordingly();
         }
-        if (_i == 3)
+        if (interactionsDemo[_i].gameObject.Equals(debrisConcrete)) // _i == 3
         {
             interactionsDemo[_i].gameObject.GetComponent<Highlighter>().Highlight();
         }
         else
         {
             geophone.GetComponent<Elevator>().upwards = false;
-            geophone.GetComponent<Elevator>().MoveAccordingly();
+            //geophone.GetComponent<Elevator>().MoveAccordingly();
             debrisConcrete.GetComponent<Highlighter>().DeHighlight();
         }
+        */
     }
 }
