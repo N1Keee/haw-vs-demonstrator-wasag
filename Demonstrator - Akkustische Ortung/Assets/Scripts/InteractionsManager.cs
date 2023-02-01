@@ -15,6 +15,7 @@ public class InteractionsManager : MonoBehaviour
     //[SerializeField] private int helpCount;
 
     [SerializeField] private GameObject geophone;
+    [SerializeField] private GameObject debrisConcrete;
 
     private int _i = 0;
 
@@ -77,15 +78,21 @@ public class InteractionsManager : MonoBehaviour
         {
             interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
         }
+        // + 
         if (interactionsDemo[_i].gameObject.Equals(geophone))
         {
             interactionsDemo[_i].gameObject.GetComponent<Elevator>().upwards = true;
             interactionsDemo[_i].gameObject.GetComponent<Elevator>().MoveAccordingly();
         }
+        if (_i == 3)
+        {
+            interactionsDemo[_i].gameObject.GetComponent<Highlighter>().Highlight();
+        }
         else
         {
             geophone.GetComponent<Elevator>().upwards = false;
             geophone.GetComponent<Elevator>().MoveAccordingly();
+            debrisConcrete.GetComponent<Highlighter>().DeHighlight();
         }
     }
 }
