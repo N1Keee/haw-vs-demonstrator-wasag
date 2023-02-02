@@ -113,6 +113,14 @@ public class InteractionsManager : MonoBehaviour
                 break;
             case 8:
                 amp.GetComponent<AmpControler>().SelectChannel(3);
+                amp.GetComponent<AmpControler>().SwitchFilter(false);
+                amp.GetComponent<AmpControler>().TurnHighPassOff();
+                amp.GetComponent<AmpControler>().TurnLowPassOff();
+                break;
+            case 9:
+                amp.GetComponent<AmpControler>().SwitchFilter(true);
+                amp.GetComponent<AmpControler>().TurnHighPassOn();
+                amp.GetComponent<AmpControler>().TurnLowPassOn();
                 break;
             default:
                 amp.GetComponent<AmpControler>().SelectChannel(0);

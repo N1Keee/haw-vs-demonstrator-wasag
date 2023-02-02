@@ -17,13 +17,25 @@ public class AmpControler : MonoBehaviour
     private Quaternion _ampKnobOff;
     private Quaternion _ampKnobOn;
     private Quaternion _channelKnobOff;
+    private Quaternion _switchOff;
+    private Quaternion _switchOn;
+    private Quaternion _hpOff;
+    private Quaternion _hpOn;
+    private Quaternion _lpOff;
+    private Quaternion _lpOn;
 
     
     private void Start()
     {
         _ampKnobOff = ampKnob.transform.rotation;
-        _channelKnobOff = channelKnob.transform.rotation;
         _ampKnobOn = new Quaternion(0.48495f, 0.51461f, 0.51461f, -0.48495f);
+        _channelKnobOff = channelKnob.transform.rotation;
+        _switchOff = filterSwitch.transform.rotation;
+        _switchOn = new Quaternion(-0.35355f, 0.61237f, 0.35355f, 0.61237f);
+        _hpOff = highPassKnob.transform.rotation;
+        _hpOn = new Quaternion(0.25821f, 0.65828f, 0.65828f, -0.25821f);
+        _lpOff = lowPassKnob.transform.rotation;
+        _lpOn = new Quaternion(-0.34281f, 0.61845f, 0.61845f, 0.34281f);
     }
 
     public void TurnOn()
@@ -71,27 +83,34 @@ public class AmpControler : MonoBehaviour
 
     public void SwitchFilter(bool on)
     {
-        
+        if (on)
+        {
+            Rotate(filterSwitch, _switchOn);
+        }
+        else
+        {
+            Rotate(filterSwitch, _switchOff);
+        }
     }
 
     public void TurnHighPassOn()
     {
-        
+        Rotate(highPassKnob, _hpOn);
     }
     
     public void TurnHighPassOff()
     {
-        
+        Rotate(highPassKnob, _hpOff);
     }
     
     public void TurnLowPassOn()
     {
-        
+        Rotate(lowPassKnob, _lpOn);
     }
     
     public void TurnLowPassOff()
     {
-        
+        Rotate(lowPassKnob, _lpOff);
     }
 
     private void Rotate(GameObject from, Quaternion to)
