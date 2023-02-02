@@ -18,9 +18,12 @@ public class Cable : MonoBehaviour
     {
         for (int i = 0; i < positions.Length; i++)
         {
-            lineRenderer.SetPosition(i, positions[i].GetChild(2).position);
+            lineRenderer.SetPosition(i, positions[i].position);
         }
     }
-    
-    
+
+    private void Update()
+    {
+        DrawLines();
+    }
 }
