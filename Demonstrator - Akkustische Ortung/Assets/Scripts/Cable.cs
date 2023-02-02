@@ -21,9 +21,4 @@ public class Cable : MonoBehaviour
             lineRenderer.SetPosition(i, positions[i].position);
         }
     }
-
-    private void Update()
-    {
-        DrawLines();
-    }
 }

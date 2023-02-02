@@ -17,7 +17,7 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private GameObject geophone;
     [SerializeField] private GameObject debrisConcrete;
     [SerializeField] private GameObject amp;
-    //[SerializeField] private GameObject cable;
+    [SerializeField] private GameObject cable;
 
     private int _i = 0;
 
@@ -102,7 +102,7 @@ public class InteractionsManager : MonoBehaviour
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 geophone.GetComponent<Elevator>().upwards = false;
                 geophone.GetComponent<Replacer>().PlaceOnPile();
-                //cable.GetComponent<Cable>().DrawLines();
+                cable.GetComponent<Cable>().DrawLines();
                 break;
             case 5:
                 amp.GetComponent<AmpControler>().TurnOff();
