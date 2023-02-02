@@ -81,6 +81,7 @@ public class InteractionsManager : MonoBehaviour
         switch (_i)
         {
             case 0:
+                amp.GetComponent<AmpControler>().SelectChannel(0);
                 interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
                 geophone.GetComponent<Elevator>().upwards = false;
                 break;
@@ -107,10 +108,17 @@ public class InteractionsManager : MonoBehaviour
             case 6:
                 amp.GetComponent<AmpControler>().TurnOn();
                 break;
+            case 7:
+                amp.GetComponent<AmpControler>().SelectChannel(0);
+                break;
+            case 8:
+                amp.GetComponent<AmpControler>().SelectChannel(3);
+                break;
             default:
-                amp.GetComponent<AmpControler>().TurnOff();
+                amp.GetComponent<AmpControler>().SelectChannel(0);
                 geophone.GetComponent<Elevator>().upwards = false;
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
+                amp.GetComponent<AmpControler>().SelectChannel(0);
                 break;
         }
     }

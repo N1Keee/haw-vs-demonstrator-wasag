@@ -342,6 +342,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
   m_PrefabInstance: {fileID: 2058726433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &49860555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35386573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4901192f75ffcc458089d911d8a50a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ampKnob: {fileID: 1476034294}
+  channelKnob: {fileID: 0}
+  filterSwitch: {fileID: 0}
+  highPassKnob: {fileID: 0}
+  lowPassKnob: {fileID: 0}
+  rSpeed: 10
 --- !u!1001 &50312379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1522,7 +1540,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492773314}
-  m_LocalRotation: {x: -0.007944347, y: 0.99089766, z: -0.115983285, w: -0.06787215}
+  m_LocalRotation: {x: -0.007944348, y: 0.99089766, z: -0.11598329, w: -0.06787216}
   m_LocalPosition: {x: -15.121885, y: 4.41, z: 15.025867}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4202,27 +4220,27 @@ MonoBehaviour:
   interactionsDemo:
   - gameObject: {fileID: 681216295}
     virtualCamera: {fileID: 1868066768}
-    instruction: This is a pile.... a big chongus
+    instruction: "Kreisf\xF6rmiger Tr\xFCmmerhaufen"
     hasAnimation: 0
   - gameObject: {fileID: 110679325}
     virtualCamera: {fileID: 1298604997}
-    instruction: This is all the main equipment
+    instruction: "Hauptequipment f\xFCr Akkustische Ortung"
     hasAnimation: 0
   - gameObject: {fileID: 1650404693}
     virtualCamera: {fileID: 1047550394}
-    instruction: These are the geophones
+    instruction: Vorbereitung der Bodenschallaufnehmer
     hasAnimation: 1
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 769801016}
-    instruction: This is a piece of concrete debris
+    instruction: "Tr\xFCmmer mit guter Schall\xFCbertragung"
     hasAnimation: 1
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 776074094}
-    instruction: Geophones in place
+    instruction: Auflegen der Bodenschallaufnehmer
     hasAnimation: 1
   - gameObject: {fileID: 35386573}
     virtualCamera: {fileID: 142533899}
-    instruction: WASAG
+    instruction: Auswertung der Tonsignale
     hasAnimation: 1
   - gameObject: {fileID: 1476034294}
     virtualCamera: {fileID: 1283769943}
@@ -4247,6 +4265,7 @@ MonoBehaviour:
   instructionText: {fileID: 1775289970}
   geophone: {fileID: 1650404693}
   debrisConcrete: {fileID: 1523538532}
+  amp: {fileID: 35386573}
 --- !u!4 &1113878123
 Transform:
   m_ObjectHideFlags: 0
@@ -6110,7 +6129,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868066767}
-  m_LocalRotation: {x: -0.007944347, y: 0.99089766, z: -0.115983285, w: -0.06787215}
+  m_LocalRotation: {x: -0.007944348, y: 0.99089766, z: -0.11598329, w: -0.06787216}
   m_LocalPosition: {x: -31.106346, y: 11.09715, z: 7.574604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6955,6 +6974,34 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
       propertyPath: m_Name
       value: "sp\xFCrger\xE4t (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6703347
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6703347
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.22505866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.22505866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869026700307562818, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 37.118
       objectReference: {fileID: 0}
     - target: {fileID: 7869873546869171050, guid: 5d2dd821e81ce024ea5dd22ce9c6758e, type: 3}
       propertyPath: m_IsActive
