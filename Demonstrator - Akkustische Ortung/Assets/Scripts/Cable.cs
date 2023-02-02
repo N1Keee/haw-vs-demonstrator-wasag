@@ -16,9 +16,18 @@ public class Cable : MonoBehaviour
     
     public void DrawLines()
     {
+        if (!lineRenderer.gameObject.activeSelf)
+        {
+            lineRenderer.transform.gameObject.SetActive(true);
+        }
         for (int i = 0; i < positions.Length; i++)
         {
             lineRenderer.SetPosition(i, positions[i].position);
         }
+    }
+
+    public void HideLines()
+    {
+        lineRenderer.transform.gameObject.SetActive(false);
     }
 }

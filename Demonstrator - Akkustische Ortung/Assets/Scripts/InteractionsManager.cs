@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private GameObject cable;
     [SerializeField] private GameObject intercom;
     [SerializeField] private GameObject headphone;
+
+    [SerializeField] private CinemachineVirtualCamera blendVirtualCamera;
 
     private int _i = 0;
 
@@ -97,6 +100,7 @@ public class InteractionsManager : MonoBehaviour
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 break;
             case 3:
+                cable.GetComponent<Cable>().HideLines();
                 debrisConcrete.GetComponent<Highlighter>().Highlight();
                 geophone.GetComponent<Replacer>().PlaceAtEquipment();
                 break;
@@ -127,6 +131,8 @@ public class InteractionsManager : MonoBehaviour
                 amp.GetComponent<AmpControler>().SwitchFilter(true);
                 amp.GetComponent<AmpControler>().TurnHighPassOn();
                 amp.GetComponent<AmpControler>().TurnLowPassOn();
+                intercom.GetComponent<IntercomMover>().ReDeploy();
+                blendVirtualCamera.Priority = 0;
                 break;
             case 10:
                 intercom.GetComponent<IntercomMover>().Deploy();
