@@ -18,6 +18,8 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private GameObject debrisConcrete;
     [SerializeField] private GameObject amp;
     [SerializeField] private GameObject cable;
+    [SerializeField] private GameObject intercom;
+    [SerializeField] private GameObject headphone;
 
     private int _i = 0;
 
@@ -109,9 +111,11 @@ public class InteractionsManager : MonoBehaviour
                 break;
             case 6:
                 amp.GetComponent<AmpControler>().TurnOn();
+                headphone.GetComponent<HeadphoneAnimation>().UnequipHp();
                 break;
             case 7:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
+                headphone.GetComponent<HeadphoneAnimation>().EquipHp();
                 break;
             case 8:
                 amp.GetComponent<AmpControler>().SelectChannel(3);
@@ -123,6 +127,9 @@ public class InteractionsManager : MonoBehaviour
                 amp.GetComponent<AmpControler>().SwitchFilter(true);
                 amp.GetComponent<AmpControler>().TurnHighPassOn();
                 amp.GetComponent<AmpControler>().TurnLowPassOn();
+                break;
+            case 10:
+                intercom.GetComponent<IntercomMover>().Deploy();
                 break;
             default:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
