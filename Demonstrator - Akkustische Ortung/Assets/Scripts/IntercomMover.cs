@@ -1,37 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IntercomMover : MonoBehaviour
 {
     [SerializeField] private float speed;
-    public LineRenderer lineRenderer;
+    [SerializeField] private float gap;
+    private float _border;
+    [SerializeField] private GameObject intercomOne;
+    [SerializeField] private GameObject intercomTwo;
 
-    private Vector3 _startingPosition;
-    private float _yBorder;
-    void Start()
+    private void Start()
     {
-        _startingPosition = transform.position;
-        _yBorder = _startingPosition.y - 1;
-        lineRenderer.positionCount = 2;
+        _border = intercomTwo.transform.position.y - gap;
     }
 
     public void Deploy()
     {
+        intercomOne.gameObject.SetActive(false);
+        intercomTwo.gameObject.SetActive(true);
+
         var step = speed * Time.deltaTime;
-        if (transform.position.y > _yBorder)
+        if (intercomTwo.transform.position.y > _border)
         {
-            transform.Translate(new Vector3(0,-step,0));
-        }
-        lineRenderer.SetPosition(0, _startingPosition);
-        lineRenderer.SetPosition(1, transform.position);
-    }
-    public void ReDeploy()
-    {
-        var step = speed * Time.deltaTime;
-        if (transform.position.y > _startingPosition.y)
-        {
-            transform.Translate(new Vector3(0,step,0));
+            intercomTwo.transform.Translate(new Vector3(0,-step,0));
         }
     }
 }
