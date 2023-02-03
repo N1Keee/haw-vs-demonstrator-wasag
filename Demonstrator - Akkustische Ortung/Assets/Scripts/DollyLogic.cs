@@ -19,7 +19,7 @@ public class DollyLogic : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition);
+        virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = 0;
     }
     
     void Update()
