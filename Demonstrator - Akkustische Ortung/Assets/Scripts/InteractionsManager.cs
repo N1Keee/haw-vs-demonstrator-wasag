@@ -105,13 +105,14 @@ public class InteractionsManager : MonoBehaviour
                 geophone.GetComponent<Replacer>().PlaceAtEquipment();
                 break;
             case 4:
-                debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 geophone.GetComponent<Elevator>().upwards = false;
+                debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 geophone.GetComponent<Replacer>().PlaceOnPile();
                 cable.GetComponent<Cable>().DrawLines();
                 break;
             case 5:
                 amp.GetComponent<AmpControler>().TurnOff();
+                headphone.GetComponent<HeadphoneAnimation>().Reposition();
                 break;
             case 6:
                 amp.GetComponent<AmpControler>().TurnOn();
@@ -119,9 +120,11 @@ public class InteractionsManager : MonoBehaviour
                 break;
             case 7:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
+                headphone.GetComponent<HeadphoneAnimation>().ShowHide(true);
                 headphone.GetComponent<HeadphoneAnimation>().EquipHp();
                 break;
             case 8:
+                headphone.GetComponent<HeadphoneAnimation>().ShowHide(false);
                 amp.GetComponent<AmpControler>().SelectChannel(3);
                 amp.GetComponent<AmpControler>().SwitchFilter(false);
                 amp.GetComponent<AmpControler>().TurnHighPassOff();

@@ -40,4 +40,22 @@ public class HeadphoneAnimation : MonoBehaviour
         //transform.rotation = Quaternion.Lerp(transform.rotation, _startRotation, rotSpeed);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, _startRotation, rStep);
     }
+
+    public void Reposition()
+    {
+        transform.position = _startPos;
+        transform.rotation = _startRotation;
+    }
+
+    public void ShowHide(bool show)
+    {
+        if (show)
+        {
+            transform.gameObject.SetActive(true);   
+        }
+        else
+        {
+            transform.gameObject.SetActive(false);
+        }
+    }
 }
