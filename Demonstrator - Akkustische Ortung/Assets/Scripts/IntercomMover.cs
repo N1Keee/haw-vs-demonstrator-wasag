@@ -15,23 +15,28 @@ public class IntercomMover : MonoBehaviour
     [SerializeField] private GameObject intercomOne;
     [SerializeField] private GameObject intercomTwo;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    public LineRenderer lineRenderer;
 
     private void Start()
     {
         _border = intercomTwo.transform.position.y - gap;
         _origin = intercomTwo.transform.position;
         _blendBorder = intercomTwo.transform.position.y - gap / 2;
+        lineRenderer.positionCount = 2;
     }
 
     public void Deploy()
     {
         //intercomOne.gameObject.SetActive(false);
         intercomTwo.gameObject.SetActive(true);
+        lineRenderer.gameObject.SetActive(true);
 
         var step = speed * Time.deltaTime;
         if (intercomTwo.transform.position.y > _border)
         {
             intercomTwo.transform.Translate(new Vector3(0,-step,0));
+            lineRenderer.SetPosition(0, _origin);
+            lineRenderer.SetPosition(1, intercomTwo.transform.position);
         }
     }
 
@@ -41,6 +46,7 @@ public class IntercomMover : MonoBehaviour
         intercomTwo.gameObject.SetActive(false);
 
         intercomTwo.transform.position = _origin;
+        lineRenderer.gameObject.SetActive(false);
     }
 
     private void Update()
