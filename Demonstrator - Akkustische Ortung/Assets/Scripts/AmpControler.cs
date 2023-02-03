@@ -11,6 +11,7 @@ public class AmpControler : MonoBehaviour
     [SerializeField] private GameObject filterSwitch;
     [SerializeField] private GameObject highPassKnob;
     [SerializeField] private GameObject lowPassKnob;
+    [SerializeField] private GameObject display;
 
     [SerializeField] private float speed;
     [SerializeField] private float slowerSpeed;
@@ -59,27 +60,38 @@ public class AmpControler : MonoBehaviour
                 break;
             case 1:
                 targetRotation = new Quaternion(-0.35684f, 0.61046f, 0.61046f, 0.35684f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(1);
                 break;
             case 2:
                 targetRotation = new Quaternion(-0.19499f, 0.67969f, 0.67969f, 0.19499f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(3);
                 break;
             case 3:
                 targetRotation = new Quaternion(-0.01556f, 0.70694f, 0.70694f, 0.01556f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(2);
                 break;
             case 4:
                 targetRotation = new Quaternion(0.16049f, 0.68865f, 0.68865f, -0.16049f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(1);
                 break;
             case 5:
                 targetRotation = new Quaternion(0.33856f, 0.62079f, 0.62079f, -0.33856f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(5);
                 break;
             case 6:
                 targetRotation = new Quaternion(0.49633f, 0.50364f, 0.50364f, -0.49633f);
+                display.GetComponent<DisplayTexture>().ChangeTexture(2);
                 break;
             default:
                 targetRotation = _channelKnobOff;
                 break;
         }
         SlowRotate(channelKnob, targetRotation);
+    }
+
+    public void displayChange()
+    {
+        
     }
 
     public void SwitchFilter(bool on)
