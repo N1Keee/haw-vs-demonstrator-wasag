@@ -38,6 +38,7 @@ public class AmpControler : MonoBehaviour
         _hpOn = new Quaternion(0.25821f, 0.65828f, 0.65828f, -0.25821f);
         _lpOff = lowPassKnob.transform.rotation;
         _lpOn = new Quaternion(-0.34281f, 0.61845f, 0.61845f, 0.34281f);
+        Debug.Log(ampKnob.transform.rotation.eulerAngles.y);
     }
 
     public void TurnOn()
@@ -60,27 +61,22 @@ public class AmpControler : MonoBehaviour
                 break;
             case 1:
                 targetRotation = new Quaternion(-0.35684f, 0.61046f, 0.61046f, 0.35684f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(1);
                 break;
             case 2:
                 targetRotation = new Quaternion(-0.19499f, 0.67969f, 0.67969f, 0.19499f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(3);
                 break;
             case 3:
                 targetRotation = new Quaternion(-0.01556f, 0.70694f, 0.70694f, 0.01556f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(2);
                 break;
             case 4:
                 targetRotation = new Quaternion(0.16049f, 0.68865f, 0.68865f, -0.16049f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(1);
                 break;
             case 5:
                 targetRotation = new Quaternion(0.33856f, 0.62079f, 0.62079f, -0.33856f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(5);
                 break;
             case 6:
                 targetRotation = new Quaternion(0.49633f, 0.50364f, 0.50364f, -0.49633f);
-                display.GetComponent<DisplayTexture>().ChangeTexture(2);
+
                 break;
             default:
                 targetRotation = _channelKnobOff;
@@ -91,7 +87,50 @@ public class AmpControler : MonoBehaviour
 
     public void displayChange()
     {
-        
+        if (ampKnob.transform.rotation.eulerAngles.y > 175)
+        {
+            if (channelKnob.transform.rotation.eulerAngles.y < 111 && channelKnob.transform.rotation.eulerAngles.y > 85)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(8);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 138 && channelKnob.transform.rotation.eulerAngles.y > 111)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(2);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 166 && channelKnob.transform.rotation.eulerAngles.y > 138)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(1);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 195 && channelKnob.transform.rotation.eulerAngles.y > 166)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(2);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 225 && channelKnob.transform.rotation.eulerAngles.y > 195)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(3);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 255 && channelKnob.transform.rotation.eulerAngles.y > 225)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(5);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 285 && channelKnob.transform.rotation.eulerAngles.y > 255)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(2);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 315 && channelKnob.transform.rotation.eulerAngles.y > 285)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(0);
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 345 && channelKnob.transform.rotation.eulerAngles.y > 315)
+            {
+                display.GetComponent<DisplayTexture>().ChangeTexture(0);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        displayChange();
     }
 
     public void SwitchFilter(bool on)

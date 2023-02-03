@@ -119,7 +119,6 @@ public class InteractionsManager : MonoBehaviour
             case 6:
                 amp.GetComponent<AmpControler>().TurnOn();
                 headphone.GetComponent<HeadphoneAnimation>().UnequipHp();
-                display.GetComponent<DisplayTexture>().ChangeTexture(3);
                 break;
             case 7:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
