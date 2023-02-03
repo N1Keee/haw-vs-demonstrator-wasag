@@ -21,6 +21,7 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private GameObject cable;
     [SerializeField] private GameObject intercom;
     [SerializeField] private GameObject headphone;
+    [SerializeField] private GameObject display;
 
     [SerializeField] private CinemachineVirtualCamera blendVirtualCamera;
 
@@ -112,11 +113,13 @@ public class InteractionsManager : MonoBehaviour
                 break;
             case 5:
                 amp.GetComponent<AmpControler>().TurnOff();
+                display.GetComponent<DisplayTexture>().ChangeTexture(0);
                 headphone.GetComponent<HeadphoneAnimation>().Reposition();
                 break;
             case 6:
                 amp.GetComponent<AmpControler>().TurnOn();
                 headphone.GetComponent<HeadphoneAnimation>().UnequipHp();
+                display.GetComponent<DisplayTexture>().ChangeTexture(3);
                 break;
             case 7:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
