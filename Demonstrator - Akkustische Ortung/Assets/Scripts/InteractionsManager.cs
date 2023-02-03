@@ -120,12 +120,14 @@ public class InteractionsManager : MonoBehaviour
                 break;
             case 7:
                 amp.GetComponent<AmpControler>().SelectChannel(0);
+                amp.GetComponent<AmpControler>().TurnOn();
                 headphone.GetComponent<HeadphoneAnimation>().ShowHide(true);
                 headphone.GetComponent<HeadphoneAnimation>().EquipHp();
                 break;
             case 8:
                 headphone.GetComponent<HeadphoneAnimation>().ShowHide(false);
-                amp.GetComponent<AmpControler>().SelectChannel(3);
+                amp.GetComponent<AmpControler>().TurnOn();
+                amp.GetComponent<AmpControler>().SelectChannel(6);
                 amp.GetComponent<AmpControler>().SwitchFilter(false);
                 amp.GetComponent<AmpControler>().TurnHighPassOff();
                 amp.GetComponent<AmpControler>().TurnLowPassOff();
@@ -134,6 +136,7 @@ public class InteractionsManager : MonoBehaviour
                 amp.GetComponent<AmpControler>().SwitchFilter(true);
                 amp.GetComponent<AmpControler>().TurnHighPassOn();
                 amp.GetComponent<AmpControler>().TurnLowPassOn();
+                amp.GetComponent<AmpControler>().SelectChannel(1);
                 intercom.GetComponent<IntercomMover>().ReDeploy();
                 blendVirtualCamera.Priority = 0;
                 break;

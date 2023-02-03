@@ -13,6 +13,7 @@ public class AmpControler : MonoBehaviour
     [SerializeField] private GameObject lowPassKnob;
 
     [SerializeField] private float speed;
+    [SerializeField] private float slowerSpeed;
 
     private Quaternion _ampKnobOff;
     private Quaternion _ampKnobOn;
@@ -78,7 +79,7 @@ public class AmpControler : MonoBehaviour
                 targetRotation = _channelKnobOff;
                 break;
         }
-        Rotate(channelKnob, targetRotation);
+        SlowRotate(channelKnob, targetRotation);
     }
 
     public void SwitchFilter(bool on)
@@ -116,6 +117,13 @@ public class AmpControler : MonoBehaviour
     private void Rotate(GameObject from, Quaternion to)
     {
         var step = speed * Time.deltaTime;
+        
+        from.transform.rotation = Quaternion.RotateTowards(from.transform.rotation, to, step);
+    }
+    
+    private void SlowRotate(GameObject from, Quaternion to)
+    {
+        var step = slowerSpeed * Time.deltaTime;
         
         from.transform.rotation = Quaternion.RotateTowards(from.transform.rotation, to, step);
     }
