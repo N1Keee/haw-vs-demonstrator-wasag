@@ -7,10 +7,10 @@ using UnityEngine.Events;
 [Serializable]
 public struct Interaction
 {
-    [SerializeField] private GameObject gameObject;
-    [SerializeField] private string instruction;
-    [SerializeField] private string help;
-    [SerializeField] private string error;
+    public GameObject GameObject;
+    public string Instruction;
+    public string Help;
+    public string Error;
     public UnityEvent OnExecution;
-    public bool HelpCounted { get; set; }
+    // public bool HelpCounted { get; set; }
 }

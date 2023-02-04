@@ -34,16 +34,53 @@ public class InteractionManager : MonoBehaviour
     
     void Start()
     {
-        //errorCountLabel.text = "";
-        //helpCountLabel.text = "";
+        helpLabel.SetText("");
+        errorLabel.SetText("");
+        helpCountLabel.SetText("Hilfen: " + _helpCount);
+        errorCountLabel.SetText("Fehler: " + _errorCount);
+
+        _currentInteraction = interactions[_interactionIndex];
+        instructionLabel.SetText(_currentInteraction.Instruction);
     }
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 20.0f, layerMask))
+            {
+                CheckInteractionOrder(hit.transform.gameObject);
+            }
+        }
     }
 
-    void Test()
+    private void CheckInteractionOrder(GameObject selectedGameObject)
     {
+        if (InteractionsCompleted)
+            return;
         
+        if (!selectedGameObject)
+            return;
+
+        if (selectedGameObject.Equals(_currentInteraction.GameObject))
+        {
+            _currentInteraction.OnExecution.Invoke();
+            _interactionIndex++;
+
+            if (InteractionsCompleted)
+            {
+                return;
+            }
+
+            _currentInteraction = interactions[_interactionIndex];
+            instructionLabel.SetText(_currentInteraction.Instruction);
+        }
+        else
+        {
+            _errorCount++;
+            errorCountLabel.SetText("Fehler:    " + _errorCount);
+        }
     }
 }
