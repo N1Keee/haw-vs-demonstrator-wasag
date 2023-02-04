@@ -34,11 +34,16 @@ public class InteractionManager : MonoBehaviour
     
     void Start()
     {
-        errorCountLabel.text = "";
-        helpCountLabel.text = "";
+        //errorCountLabel.text = "";
+        //helpCountLabel.text = "";
     }
     void Update()
     {
-        //lol
+        
+    }
+
+    void Test()
+    {
+        
     }
 }
