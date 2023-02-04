@@ -3078,8 +3078,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492773314}
-  m_LocalRotation: {x: 0.12968151, y: 0.49107042, z: -0.07420407, w: 0.85821116}
-  m_LocalPosition: {x: -27.22529, y: 4.41, z: -5.897896}
+  m_LocalRotation: {x: 0.07103678, y: -0.7966638, z: 0.095500514, w: 0.59258777}
+  m_LocalPosition: {x: -3.0154295, y: 4.41, z: 4.2562313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7702,28 +7702,31 @@ MonoBehaviour:
       in akustische Signale um."
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 769801016}
-    instruction: 
+    instruction: "Beton eignet sich gut, um Ersch\xFCtterungen \xFCber weite Distanzen
+      zu \xFCbertragen."
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 776074094}
-    instruction: 
+    instruction: Platzieren Sie die Bodenschallaufnehmer an den passenden Stellen.
   - gameObject: {fileID: 35386573}
     virtualCamera: {fileID: 142533899}
-    instruction: 
+    instruction: "Das Sp\xFCrger\xE4t ist das Kernst\xFCck. Es verst\xE4rkt die Signale,
+      filtert sie bei bedarf, zeigt den Pegel des ausgew\xE4hlten Geophons an und
+      gibt den Ton an die Kopfh\xF6rer aus."
   - gameObject: {fileID: 1476034294}
     virtualCamera: {fileID: 1283769943}
-    instruction: 
+    instruction: "Schalten Sie den Verst\xE4rker an"
   - gameObject: {fileID: 521351602}
     virtualCamera: {fileID: 696736819}
-    instruction: 
+    instruction: "Setzen Sie die Kopfh\xF6rer auf"
   - gameObject: {fileID: 1549323087}
     virtualCamera: {fileID: 543176677}
-    instruction: 
+    instruction: "Schauen Sie sich die Pegel der verschiedenen Eing\xE4nge an"
   - gameObject: {fileID: 35386573}
     virtualCamera: {fileID: 1187896690}
-    instruction: 
+    instruction: Stellen Sie den Filter ein
   - gameObject: {fileID: 845746781}
     virtualCamera: {fileID: 815283956}
-    instruction: 
+    instruction: Lassen Sie die Wechselsprechsonde hinab
   instructionText: {fileID: 1775289970}
   geophone: {fileID: 1650404693}
   debrisConcrete: {fileID: 1523538532}
@@ -12628,7 +12631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868066767}
-  m_LocalRotation: {x: 0.12968151, y: 0.49107042, z: -0.07420407, w: 0.85821116}
+  m_LocalRotation: {x: 0.07103678, y: -0.7966638, z: 0.095500514, w: 0.59258777}
   m_LocalPosition: {x: -31.106346, y: 11.09715, z: 7.574604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14624,7 +14627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 38020326}
-  m_PathPosition: 0.7884703
+  m_PathPosition: 0.3638844
   m_PositionUnits: 2
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
