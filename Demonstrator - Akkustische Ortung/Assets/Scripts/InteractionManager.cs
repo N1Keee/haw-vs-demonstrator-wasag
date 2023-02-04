@@ -54,6 +54,20 @@ public class InteractionManager : MonoBehaviour
                 CheckInteractionOrder(hit.transform.gameObject);
             }
         }
+        
+        if (Input.GetKeyDown(KeyCode.H) && !InteractionsCompleted)
+        {
+            if (!_currentInteraction.HelpCounted)
+            {
+                _helpCount++;
+                _currentInteraction.HelpCounted = true;
+            }
+
+            helpCountLabel.SetText("Hilfen: " + _helpCount);
+                
+            StopHelpAndErrorDisplay();
+            StartCoroutine(DisplayForDuration(helpLabel, _currentInteraction.Help, 4));
+        }
     }
 
     private void CheckInteractionOrder(GameObject selectedGameObject)
@@ -66,6 +80,7 @@ public class InteractionManager : MonoBehaviour
 
         if (selectedGameObject.Equals(_currentInteraction.GameObject))
         {
+            StopHelpAndErrorDisplay();
             _currentInteraction.OnExecution.Invoke();
             _interactionIndex++;
 
@@ -79,8 +94,24 @@ public class InteractionManager : MonoBehaviour
         }
         else
         {
+            StopHelpAndErrorDisplay();
+            StartCoroutine(DisplayForDuration(errorLabel, _currentInteraction.Error, 4));
             _errorCount++;
             errorCountLabel.SetText("Fehler:    " + _errorCount);
         }
+    }
+    
+    private IEnumerator DisplayForDuration(TextMeshProUGUI label, string msg, float duration)
+    {
+        label.text = msg;
+        yield return new WaitForSeconds(duration);
+        label.text = "";
+    }
+        
+    private void StopHelpAndErrorDisplay()
+    {
+        StopAllCoroutines();
+        helpLabel.SetText("");
+        errorLabel.SetText("");
     }
 }

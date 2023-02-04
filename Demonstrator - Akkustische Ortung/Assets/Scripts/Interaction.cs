@@ -11,6 +11,6 @@ public struct Interaction
     public string Instruction;
     public string Help;
     public string Error;
-    public UnityEvent OnExecution;
-    // public bool HelpCounted { get; set; }
+    public UnityEvent OnExecution; 
+    public bool HelpCounted { get; set; }
 }
