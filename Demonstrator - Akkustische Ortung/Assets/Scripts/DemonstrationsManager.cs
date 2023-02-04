@@ -26,7 +26,6 @@ public class DemonstrationsManager : MonoBehaviour
 
     private void LoadInteraction(int i)
     {
-        Debug.Log("Loading Interaction, _i: " + _i + " i: " + i);
         if (i == demonstrations.Count)
         {
             // do nothing
@@ -56,7 +55,6 @@ public class DemonstrationsManager : MonoBehaviour
         {
             LoadInteraction( _i + 1);
             _i += 1;
-            Debug.Log("_i now: " + _i);
         }
     }
 
@@ -70,7 +68,6 @@ public class DemonstrationsManager : MonoBehaviour
         {
             LoadInteraction(_i - 1);
             _i -= 1;
-            Debug.Log("_i now: " + _i);
         }
     }
     

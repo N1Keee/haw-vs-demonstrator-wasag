@@ -38,7 +38,6 @@ public class AmpControler : MonoBehaviour
         _hpOn = new Quaternion(0.25821f, 0.65828f, 0.65828f, -0.25821f);
         _lpOff = lowPassKnob.transform.rotation;
         _lpOn = new Quaternion(-0.34281f, 0.61845f, 0.61845f, 0.34281f);
-        Debug.Log(ampKnob.transform.rotation.eulerAngles.y);
     }
 
     public void TurnOn()

@@ -21,9 +21,4 @@ public class DollyLogic : MonoBehaviour
     {
         virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = 0;
     }
-    
-    void Update()
-    {
-        // Loop();
-    }
 }

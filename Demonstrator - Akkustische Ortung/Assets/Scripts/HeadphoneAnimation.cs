@@ -14,7 +14,6 @@ public class HeadphoneAnimation : MonoBehaviour
     
     void Start()
     {
-        Debug.Log(transform.rotation);
         _targetPos = cam.transform.position;
         _targetPos.y += 0.25f; 
         _targetRotation = cam.transform.rotation;
