@@ -4,17 +4,12 @@ using System.Collections.Generic;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class InteractionsManager : MonoBehaviour
+public class DemonstrationsManager : MonoBehaviour
 {
-    [SerializeField] private List<Interaction> interactionsDemo;
+    [SerializeField] private List<Demonstration> demonstrations;
     [SerializeField] private TextMeshProUGUI instructionText;
-    //[SerializeField] private TextMeshProUGUI helpText;
-    //[SerializeField] private TextMeshProUGUI errorText;
-
-    //[SerializeField] private int errorCount;
-    //[SerializeField] private int helpCount;
-
     [SerializeField] private GameObject geophone;
     [SerializeField] private GameObject debrisConcrete;
     [SerializeField] private GameObject amp;
@@ -22,6 +17,8 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private GameObject intercom;
     [SerializeField] private GameObject headphone;
     [SerializeField] private GameObject display;
+    [SerializeField] private Button previousBtn;
+    [SerializeField] private Button nextBtn;
 
     [SerializeField] private CinemachineVirtualCamera blendVirtualCamera;
 
@@ -30,7 +27,7 @@ public class InteractionsManager : MonoBehaviour
     private void LoadInteraction(int i)
     {
         Debug.Log("Loading Interaction, _i: " + _i + " i: " + i);
-        if (i == interactionsDemo.Count)
+        if (i == demonstrations.Count)
         {
             // do nothing
         }
@@ -40,18 +37,18 @@ public class InteractionsManager : MonoBehaviour
         }
         else
         {
-            foreach (Interaction interaction in interactionsDemo)
+            foreach (Demonstration demonstration in demonstrations)
             {
-                interaction.virtualCamera.Priority = 0;
+                demonstration.virtualCamera.Priority = 0;
             }
-            interactionsDemo[i].virtualCamera.Priority = 1;
-            instructionText.SetText(interactionsDemo[i].instruction);
+            demonstrations[i].virtualCamera.Priority = 1;
+            instructionText.SetText(demonstrations[i].instruction);
         }
     }
     
     public void NextInteraction()
     {
-        if (_i + 1 == interactionsDemo.Count)
+        if (_i + 1 == demonstrations.Count)
         {
             
         }
@@ -88,11 +85,13 @@ public class InteractionsManager : MonoBehaviour
         switch (_i)
         {
             case 0:
+                previousBtn.gameObject.SetActive(false);
                 amp.GetComponent<AmpControler>().SelectChannel(0);
-                interactionsDemo[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
+                demonstrations[_i].virtualCamera.GetComponent<DollyLogic>().Loop();
                 geophone.GetComponent<Elevator>().upwards = false;
                 break;
             case 1:
+                previousBtn.gameObject.SetActive(true);
                 geophone.GetComponent<Replacer>().PlaceAtEquipment();
                 geophone.GetComponent<Elevator>().upwards = false;
                 break;
@@ -135,6 +134,7 @@ public class InteractionsManager : MonoBehaviour
                 amp.GetComponent<AmpControler>().TurnLowPassOff();
                 break;
             case 9:
+                nextBtn.gameObject.SetActive(true);
                 amp.GetComponent<AmpControler>().SwitchFilter(true);
                 amp.GetComponent<AmpControler>().TurnHighPassOn();
                 amp.GetComponent<AmpControler>().TurnLowPassOn();
@@ -143,6 +143,7 @@ public class InteractionsManager : MonoBehaviour
                 blendVirtualCamera.Priority = 0;
                 break;
             case 10:
+                nextBtn.gameObject.SetActive(false);
                 intercom.GetComponent<IntercomMover>().Deploy();
                 break;
             default:

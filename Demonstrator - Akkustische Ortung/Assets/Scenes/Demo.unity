@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3078,8 +3078,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492773314}
-  m_LocalRotation: {x: 0.12968148, y: 0.49107078, z: -0.07420412, w: 0.8582109}
-  m_LocalPosition: {x: -27.225296, y: 4.41, z: -5.897887}
+  m_LocalRotation: {x: 0.12968151, y: 0.49107042, z: -0.07420407, w: 0.85821116}
+  m_LocalPosition: {x: -27.22529, y: 4.41, z: -5.897896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7393,7 +7393,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047550393}
-  m_LocalRotation: {x: 0.14216775, y: 0.8434682, z: -0.27199093, w: 0.4408749}
+  m_LocalRotation: {x: 0.14216775, y: 0.8434682, z: -0.27199095, w: 0.4408749}
   m_LocalPosition: {x: -26.205, y: 2.912, z: 6.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7669,7 +7669,7 @@ GameObject:
   - component: {fileID: 1113878123}
   - component: {fileID: 1113878122}
   m_Layer: 0
-  m_Name: InteractionsManager
+  m_Name: DemonstrationsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7687,51 +7687,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd802bf85c95404384b604f122b5666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionsDemo:
+  demonstrations:
   - gameObject: {fileID: 681216295}
     virtualCamera: {fileID: 1868066768}
-    instruction: "Kreisf\xF6rmiger Tr\xFCmmerhaufen"
-    hasAnimation: 0
+    instruction: "Bei der akustischen Ortung suchen Sie nach Ger\xE4uschen von \xFCberlebenden
+      Menschen in Tr\xFCmmerhaufen."
   - gameObject: {fileID: 110679325}
     virtualCamera: {fileID: 1298604997}
-    instruction: "Hauptequipment f\xFCr Akkustische Ortung"
-    hasAnimation: 0
+    instruction: "Mit diesem Equipment werden Ger\xE4usche aus den Tr\xFCmmern verst\xE4rkt
+      und h\xF6rbar gemacht."
   - gameObject: {fileID: 1650404693}
     virtualCamera: {fileID: 1047550394}
-    instruction: Vorbereitung der Bodenschallaufnehmer
-    hasAnimation: 1
+    instruction: "Dies sind die Bodenschallaufnehmer. Sie wandeln Ersch\xFCtterungen
+      in akustische Signale um."
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 769801016}
-    instruction: "Tr\xFCmmer mit guter Schall\xFCbertragung"
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 1523538532}
     virtualCamera: {fileID: 776074094}
-    instruction: Auflegen der Bodenschallaufnehmer
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 35386573}
     virtualCamera: {fileID: 142533899}
-    instruction: Auswertung der Tonsignale
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 1476034294}
     virtualCamera: {fileID: 1283769943}
-    instruction: "Verst\xE4rker anschalten"
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 521351602}
     virtualCamera: {fileID: 696736819}
-    instruction: "Kopfh\xF6rer aufsetzen"
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 1549323087}
     virtualCamera: {fileID: 543176677}
-    instruction: "Wahlschalter f\xFCr Bodenschallaufnehmer"
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 35386573}
     virtualCamera: {fileID: 1187896690}
-    instruction: Filter einschalten und Rauschen rausfiltern
-    hasAnimation: 1
+    instruction: 
   - gameObject: {fileID: 845746781}
     virtualCamera: {fileID: 815283956}
-    instruction: Wechselsprechsonde
-    hasAnimation: 1
+    instruction: 
   instructionText: {fileID: 1775289970}
   geophone: {fileID: 1650404693}
   debrisConcrete: {fileID: 1523538532}
@@ -7740,6 +7732,8 @@ MonoBehaviour:
   intercom: {fileID: 845746781}
   headphone: {fileID: 1284523477}
   display: {fileID: 449958589}
+  previousBtn: {fileID: 2137466304}
+  nextBtn: {fileID: 1899621716}
   blendVirtualCamera: {fileID: 731085619}
 --- !u!4 &1113878123
 Transform:
@@ -9300,7 +9294,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298604996}
-  m_LocalRotation: {x: 0.14290696, y: 0.83743227, z: -0.2610743, w: 0.45839402}
+  m_LocalRotation: {x: 0.14290698, y: 0.83743227, z: -0.26107433, w: 0.458394}
   m_LocalPosition: {x: -25.61, y: 2.32, z: 7.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12634,7 +12628,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868066767}
-  m_LocalRotation: {x: 0.12968148, y: 0.49107078, z: -0.07420412, w: 0.8582109}
+  m_LocalRotation: {x: 0.12968151, y: 0.49107042, z: -0.07420407, w: 0.85821116}
   m_LocalPosition: {x: -31.106346, y: 11.09715, z: 7.574604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
