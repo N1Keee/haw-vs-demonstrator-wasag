@@ -154,4 +154,8 @@ public class InteractionManager : MonoBehaviour
         return geophones[_geoIndex].transform.position;
     }
     
+    public GameObject GetGeophone()
+    { 
+        return geophones[_geoIndex];
+    }
 }
