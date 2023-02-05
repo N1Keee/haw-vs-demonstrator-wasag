@@ -35,6 +35,9 @@ public class InteractionManager : MonoBehaviour
         
     private int _errorCount;
     private int _helpCount;
+    
+    // end screen...
+    private int _geoIndex;
         
     private void Awake() => _cam = Camera.main;
     
@@ -139,7 +142,16 @@ public class InteractionManager : MonoBehaviour
         string help = "Der Wahlschalter zeigt den Pegel von einzelnen Bodenschallaufnehmern an. Überprüfe diese nochmal.";
         Random rnd = new Random();
         int i = rnd.Next(6);
+        _geoIndex = i;
         Interaction randomInteraction = new Interaction(geophones[i], instruction, error, help);
         interactions.Add(randomInteraction);
+        
     }
+
+    public Vector3 GetPos()
+    {
+        Debug.Log(geophones[_geoIndex].transform.position);
+        return geophones[_geoIndex].transform.position;
+    }
+    
 }
