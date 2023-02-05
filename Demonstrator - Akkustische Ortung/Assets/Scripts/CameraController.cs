@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equipmentCamera.Priority = 1;
-        pileCamera.Priority = 0;
+        equipmentCamera.Priority = 0;
+        pileCamera.Priority = 1;
     }
 
     public void SwitchCamera()

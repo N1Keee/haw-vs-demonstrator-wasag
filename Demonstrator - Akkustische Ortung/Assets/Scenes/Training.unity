@@ -1114,7 +1114,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377107132}
-  m_LocalRotation: {x: 0.32897553, y: 0.000000016248647, z: -0.000000005660479, w: 0.94433844}
+  m_LocalRotation: {x: 0.32897553, y: -0.000000016248645, z: 0.000000005660478, w: 0.94433844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2748,7 +2748,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769462369}
-  m_LocalRotation: {x: 0.38268334, y: 0.000000015896626, z: -0.0000000065845955, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268334, y: 0.000000015896621, z: -0.000000006584595, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2837,101 +2837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions:
-  - GameObject: {fileID: 1522740164}
-    Instruction: "Schalten Sie den Verst\xE4rker ein."
-    Help: "Drehen Sie Den Knopf der mit \"Verst\xE4rkung\" gekennzeichnet ist."
-    Error: Falscher Knopf...
-    OnExecution:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1522740168}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: PowerAmp
-            m_BoolArgument: 0
-          m_CallState: 2
-  - GameObject: {fileID: 1826178734}
-    Instruction: "Setzen Sie Den Kopfh\xF6rer auf."
-    Help: "Die Kopfh\xF6rer sind am Helm angebracht."
-    Error: "Das war nicht Der Kopfh\xF6rer..."
-    OnExecution:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1826178735}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Mount
-            m_BoolArgument: 0
-          m_CallState: 2
-  - GameObject: {fileID: 2018197225}
-    Instruction: Schalten Sie den Filter ein.
-    Help: "Der Filter wird \xFCber einen Schalter eingeschaltet."
-    Error: Das war nicht Schalter...
-    OnExecution:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2018197229}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: PowerFilter
-            m_BoolArgument: 0
-          m_CallState: 2
-  - GameObject: {fileID: 1396308362}
-    Instruction: Stellen Sie den Hochpassfilter auf 35Hz
-    Help: Der Hochpassfilter befindet sich links neben dem Filter-Schalter.
-    Error: Das war nicht Hochpassfilter...
-    OnExecution:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1396308364}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: TurnHighPass
-            m_BoolArgument: 0
-          m_CallState: 2
-  - GameObject: {fileID: 1421824108}
-    Instruction: Stellen Sie den Tiefpassfilter auf 800Hz
-    Help: Der Hochpassfilter befindet sich rechts neben dem Filter-Schalter.
-    Error: Das war nicht Schalter...
-    OnExecution:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1421824112}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: TurnLowPass
-            m_BoolArgument: 0
-          m_CallState: 2
   - GameObject: {fileID: 1843453472}
     Instruction: Bodenschallaufnehmer platzieren.
     Help: Sind Orange
@@ -2955,18 +2860,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Highlighter, Assembly-CSharp
           m_MethodName: HighlightPiece
           m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1415489433}
-          m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
-          m_MethodName: SwitchCamera
-          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3221,6 +3114,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1815776110}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Place
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1415489433}
           m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
           m_MethodName: SwitchCamera
@@ -3233,7 +3138,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1815776110}
+  - GameObject: {fileID: 1522740164}
+    Instruction: "Schalten Sie den Verst\xE4rker ein."
+    Help: "Drehen Sie Den Knopf der mit \"Verst\xE4rkung\" gekennzeichnet ist."
+    Error: Falscher Knopf...
+    OnExecution:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1522740168}
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: SetTrigger
           m_Mode: 5
@@ -3242,7 +3154,83 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Place
+            m_StringArgument: PowerAmp
+            m_BoolArgument: 0
+          m_CallState: 2
+  - GameObject: {fileID: 1826178734}
+    Instruction: "Setzen Sie Den Kopfh\xF6rer auf."
+    Help: "Die Kopfh\xF6rer sind am Helm angebracht."
+    Error: "Das war nicht Der Kopfh\xF6rer..."
+    OnExecution:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1826178735}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mount
+            m_BoolArgument: 0
+          m_CallState: 2
+  - GameObject: {fileID: 2018197225}
+    Instruction: Schalten Sie den Filter ein.
+    Help: "Der Filter wird \xFCber einen Schalter eingeschaltet."
+    Error: Das war nicht Schalter...
+    OnExecution:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018197229}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PowerFilter
+            m_BoolArgument: 0
+          m_CallState: 2
+  - GameObject: {fileID: 1396308362}
+    Instruction: Stellen Sie den Hochpassfilter auf 35Hz
+    Help: Der Hochpassfilter befindet sich links neben dem Filter-Schalter.
+    Error: Das war nicht Hochpassfilter...
+    OnExecution:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1396308364}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: TurnHighPass
+            m_BoolArgument: 0
+          m_CallState: 2
+  - GameObject: {fileID: 1421824108}
+    Instruction: Stellen Sie den Tiefpassfilter auf 800Hz
+    Help: Der Hochpassfilter befindet sich rechts neben dem Filter-Schalter.
+    Error: Das war nicht Schalter...
+    OnExecution:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1421824112}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: TurnLowPass
             m_BoolArgument: 0
           m_CallState: 2
   instructionLabel: {fileID: 344012903}
@@ -9937,7 +9925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127437038}
-  m_LocalRotation: {x: 0.029517323, y: -0.94454145, z: 0.3148472, w: 0.088552}
+  m_LocalRotation: {x: 0.029517319, y: -0.9445414, z: 0.31484717, w: 0.08855193}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
