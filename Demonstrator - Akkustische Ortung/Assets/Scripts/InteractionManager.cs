@@ -20,6 +20,8 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI totalErrorCountLabel;
     [SerializeField] private TextMeshProUGUI totalHelpCountLabel;
 
+    [SerializeField] private float completionCallbackDelay;
+
     [SerializeField] private LayerMask layerMask;
     private Camera _cam;
 
@@ -87,11 +89,12 @@ public class InteractionManager : MonoBehaviour
         if (selectedGameObject.Equals(_currentInteraction.GameObject))
         {
             StopHelpAndErrorDisplay();
-            _currentInteraction.OnExecution.Invoke();
+            _currentInteraction.OnExecution?.Invoke();
             _interactionIndex++;
 
             if (InteractionsCompleted)
             {
+                StartCoroutine(DelayedTrainingCompletionCallback());
                 return;
             }
 
@@ -119,6 +122,14 @@ public class InteractionManager : MonoBehaviour
         StopAllCoroutines();
         helpLabel.SetText("");
         errorLabel.SetText("");
+    }
+    
+    private IEnumerator DelayedTrainingCompletionCallback()
+    {
+        totalErrorCountLabel.SetText("Fehler: " + _errorCount);
+        totalHelpCountLabel.SetText("Hilfen: " + _helpCount);
+        yield return new WaitForSeconds(completionCallbackDelay);
+        OnCompleted?.Invoke();
     }
     
     private void GenerateRandomGeoInteraction()
