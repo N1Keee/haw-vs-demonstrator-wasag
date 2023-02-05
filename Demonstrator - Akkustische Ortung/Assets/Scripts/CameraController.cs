@@ -28,5 +28,9 @@ public class CameraController : MonoBehaviour
         {
             SwitchCamera();
         }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SwitchCamera();
+        }
     }
 }
