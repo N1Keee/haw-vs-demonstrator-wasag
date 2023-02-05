@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -19,5 +20,13 @@ public class CameraController : MonoBehaviour
     {
         equipmentCamera.Priority = (equipmentCamera.Priority + 1) % 2;
         pileCamera.Priority = (pileCamera.Priority + 1) % 2;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SwitchCamera();
+        }
     }
 }

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class InteractionManager : MonoBehaviour
 
     [SerializeField] private LayerMask layerMask;
     private Camera _cam;
+
+    [SerializeField] private GameObject[] geophones;
     
     [SerializeField] private UnityEvent OnCompleted;
     
@@ -41,6 +45,8 @@ public class InteractionManager : MonoBehaviour
 
         _currentInteraction = interactions[_interactionIndex];
         instructionLabel.SetText(_currentInteraction.Instruction);
+        
+        GenerateRandomGeoInteraction();
     }
     void Update()
     {
@@ -113,5 +119,16 @@ public class InteractionManager : MonoBehaviour
         StopAllCoroutines();
         helpLabel.SetText("");
         errorLabel.SetText("");
+    }
+    
+    private void GenerateRandomGeoInteraction()
+    {
+        string instruction = "Finde den Bodenschallaufnehmer bei dem der Pegel am höchsten war.";
+        string error = "Das war nicht der Richtige Bodenschallaufnehmer...";
+        string help = "Der Wahlschalter zeigt den Pegel von einzelnen Bodenschallaufnehmern an. Überprüfe diese nochmal.";
+        Random rnd = new Random();
+        int i = rnd.Next(6);
+        Interaction randomInteraction = new Interaction(geophones[i], instruction, error, help);
+        interactions.Add(randomInteraction);
     }
 }

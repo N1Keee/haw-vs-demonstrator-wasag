@@ -13,4 +13,12 @@ public struct Interaction
     public string Error;
     public UnityEvent OnExecution; 
     public bool HelpCounted { get; set; }
+
+    public Interaction(GameObject gameObject, string instruction, string help, string error) : this()
+    {
+        GameObject = gameObject;
+        Instruction = instruction;
+        Help = help;
+        Error = error;
+    }
 }

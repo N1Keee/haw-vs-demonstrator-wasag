@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bodenschallaufnehmer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
 --- !u!4 &144811806 stripped
@@ -630,8 +634,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211714314}
-  m_LocalRotation: {x: 0.024381362, y: -0.96106905, z: 0.2600644, w: 0.09010141}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.024381347, y: -0.96106905, z: 0.26006442, w: 0.09010141}
+  m_LocalPosition: {x: -0.0000002384185, y: 0, z: -0.0000009536744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1109,6 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   channelKnob: {fileID: 367621915}
   scrollSpeed: 5000
+  highlightMaterial: {fileID: 2100000, guid: 1b7f476b9dc135c4a89079779ee8235a, type: 2}
 --- !u!1 &377107132
 GameObject:
   m_ObjectHideFlags: 3
@@ -1133,7 +1138,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377107132}
-  m_LocalRotation: {x: 0.32897553, y: 0.000000016248645, z: -0.000000005660478, w: 0.94433844}
+  m_LocalRotation: {x: 0.32897553, y: -0.000000016248652, z: 0.000000005660481, w: 0.94433844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2767,7 +2772,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769462369}
-  m_LocalRotation: {x: 0.38268334, y: 0.000000015896621, z: -0.000000006584595, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268334, y: 0.000000015877855, z: -0.0000000065768218, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3264,6 +3269,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1843453481}
+          m_TargetAssemblyTypeName: ColliderDisabler, Assembly-CSharp
+          m_MethodName: DisableColliders
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   instructionLabel: {fileID: 344012903}
   helpLabel: {fileID: 1266161368}
   errorLabel: {fileID: 1805865250}
@@ -3274,6 +3291,13 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  geophones:
+  - {fileID: 1015530347}
+  - {fileID: 1232863915}
+  - {fileID: 1295313731}
+  - {fileID: 857493292}
+  - {fileID: 591269009}
+  - {fileID: 1815776109}
   OnCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -3568,6 +3592,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
       propertyPath: m_Name
       value: bodenschallaufnehmer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
@@ -3943,6 +3971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bodenschallaufnehmer (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
 --- !u!4 &945473556 stripped
@@ -4184,7 +4216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982400964}
   m_LocalRotation: {x: 0.02695198, y: -0.95322627, z: 0.28748372, w: 0.08936613}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0000002384185, y: 0, z: -0.0000009536744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4217,6 +4249,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1015530349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015530347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1026980292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,7 +4757,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093773694}
-  m_LocalRotation: {x: 0.3558874, y: 3e-45, z: -1e-45, w: 0.9345288}
+  m_LocalRotation: {x: 0.3558874, y: -3e-45, z: 1e-45, w: 0.9345288}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5819,6 +5864,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1295313733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295313731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1314806165
 GameObject:
   m_ObjectHideFlags: 3
@@ -7086,6 +7144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bodenschallaufnehmer (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
 --- !u!4 &1576493651 stripped
@@ -7113,6 +7175,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1576493653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857493292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1581637495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7356,6 +7431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bodenschallaufnehmer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
 --- !u!4 &1594807279 stripped
@@ -7383,6 +7462,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1594807281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232863915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1633855787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8511,6 +8603,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1815776111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815776109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1821106381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8627,6 +8732,7 @@ GameObject:
   - component: {fileID: 1843453476}
   - component: {fileID: 1843453475}
   - component: {fileID: 1843453474}
+  - component: {fileID: 1843453481}
   m_Layer: 3
   m_Name: Bodenschallaufnehmer
   m_TagString: Untagged
@@ -8753,6 +8859,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12020111, y: 0.24915671, z: 0.20475769}
   m_Center: {x: 0.00071525574, y: -0.00076556206, z: 0}
+--- !u!114 &1843453481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843453472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b630f2cac8fc0409d483115430f305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856151977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9299,6 +9417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bodenschallaufnehmer (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec6bbca5d09f68b4e8d28f11dae21817, type: 3}
 --- !u!4 &1912913798 stripped
@@ -9326,6 +9448,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1912913800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591269009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1946627800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9957,7 +10092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127437038}
   m_LocalRotation: {x: 0.029517319, y: -0.9445414, z: 0.31484717, w: 0.08855193}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0000002384185, y: 0, z: -0.0000009536744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
