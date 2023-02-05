@@ -21,4 +21,14 @@ public class Highlighter : MonoBehaviour
             piece.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
         }
     }
+    
+    public void HighlightPiece(int i)
+    {
+        debrisPieces[i].GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+    }
+    
+    public void DeHighlightPiece(int i)
+    {
+        debrisPieces[i].GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+    }
 }
