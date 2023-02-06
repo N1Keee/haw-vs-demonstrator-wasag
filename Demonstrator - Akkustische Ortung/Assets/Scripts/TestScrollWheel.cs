@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScrollWheel : MonoBehaviour
+public class TestScrollWheel : MonoBehaviour  // rename !!!
 {
     private bool _scrollEnabled;
     [SerializeField] private GameObject channelKnob;

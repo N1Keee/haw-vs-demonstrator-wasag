@@ -5,7 +5,7 @@ using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class IntercomMover : MonoBehaviour
+public class IntercomMover : MonoBehaviour  // can be deleted
 {
     [SerializeField] private float speed;
     [SerializeField] private float gap;
@@ -49,7 +49,7 @@ public class IntercomMover : MonoBehaviour
         intercomTwo.transform.position = _origin;
         cable.transform.position = _cableOrigin;
     }
-
+    /*
     private void Update()
     {
         if(intercomTwo.transform.gameObject.activeSelf)
@@ -73,4 +73,5 @@ public class IntercomMover : MonoBehaviour
             }
         }
     }
+    */
 }

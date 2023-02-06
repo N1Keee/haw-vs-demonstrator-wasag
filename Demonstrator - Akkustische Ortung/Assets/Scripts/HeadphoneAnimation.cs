@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeadphoneAnimation : MonoBehaviour
+public class HeadphoneAnimation : MonoBehaviour  // can be deleted
 {
     [SerializeField] private float mSpeed;
     [SerializeField] private float rSpeed;

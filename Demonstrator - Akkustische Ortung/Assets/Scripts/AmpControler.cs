@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AmpControler : MonoBehaviour
+public class AmpControler : MonoBehaviour  // can be deleted !!!
 {
     [SerializeField] private GameObject ampKnob;
     [SerializeField] private GameObject channelKnob;
