@@ -9,7 +9,42 @@ using UnityEngine.UI;
 public class DemonstrationsManager : MonoBehaviour
 {
     [SerializeField] private List<Demonstration> demonstrations;
-    [SerializeField] private TextMeshProUGUI instructionText;
+    [SerializeField] private TextMeshProUGUI instructionLabel;
+
+    private bool _demonstrationsCompleted;
+    
+    private int _i = 0;
+
+    public void LoadDemonstation()
+    {
+        if (_demonstrationsCompleted)
+        {
+            return;
+        }
+        SetCamera(demonstrations[_i].VirtualCamera);
+        instructionLabel.text = demonstrations[_i].Instruction;
+        demonstrations[_i].OnExecute?.Invoke();
+    }
+
+    public void IncrementIndex()
+    {
+        if (_i == demonstrations.Count-1)
+        {
+            return;
+        }
+        _i++;
+    }
+
+    public void DecrementIndex()
+    {
+        if (_i == 0)
+        {
+            return;
+        }
+        _i--;
+    }
+    
+    /*
     [SerializeField] private GameObject geophone;
     [SerializeField] private GameObject debrisConcrete;
     [SerializeField] private GameObject amp;
@@ -21,9 +56,9 @@ public class DemonstrationsManager : MonoBehaviour
     [SerializeField] private Button nextBtn;
 
     [SerializeField] private CinemachineVirtualCamera blendVirtualCamera;
+    */
 
-    private int _i = 0;
-
+    /*
     private void LoadInteraction(int i)
     {
         if (i == demonstrations.Count)
@@ -70,15 +105,24 @@ public class DemonstrationsManager : MonoBehaviour
             _i -= 1;
         }
     }
-    
+    */
     private void Start()
     {
-        LoadInteraction(_i);
+        LoadDemonstation();
+    }
+
+    private void SetCamera(CinemachineVirtualCamera virtualCamera)
+    {
+        foreach (var demonstration in demonstrations)
+        {
+            demonstration.VirtualCamera.Priority = 0;
+        }
+        virtualCamera.Priority = 1;
     }
 
     private void Update()
     {
-
+        /*
         switch (_i)
         {
             case 0:
@@ -149,6 +193,8 @@ public class DemonstrationsManager : MonoBehaviour
                 debrisConcrete.GetComponent<Highlighter>().DeHighlight();
                 amp.GetComponent<AmpControler>().SelectChannel(0);
                 break;
+            
         }
+        */
     }
 }

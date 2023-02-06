@@ -37,6 +37,6 @@ public class Elevator : MonoBehaviour
 
     private void Update()
     {
-        MoveAccordingly();
+        //MoveAccordingly();
     }
 }
