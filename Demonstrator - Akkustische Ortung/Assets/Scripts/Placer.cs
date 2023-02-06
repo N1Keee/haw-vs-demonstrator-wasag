@@ -24,4 +24,13 @@ public class Placer : MonoBehaviour
             animator.SetTrigger("Place");
         }
     }
+
+    public void ReplaceGeophones()
+    {
+        foreach (var animator in animators)
+        {
+            animator.Rebind();
+            animator.Update(0f);
+        }
+    }
 }

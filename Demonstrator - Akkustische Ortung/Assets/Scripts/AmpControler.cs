@@ -84,7 +84,7 @@ public class AmpControler : MonoBehaviour
         SlowRotate(channelKnob, targetRotation);
     }
 
-    public void displayChange()
+    /*public void displayChange()
     {
         if (ampKnob.transform.rotation.eulerAngles.y > 175)
         {
@@ -126,11 +126,7 @@ public class AmpControler : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        displayChange();
-    }
+    */
 
     public void SwitchFilter(bool on)
     {

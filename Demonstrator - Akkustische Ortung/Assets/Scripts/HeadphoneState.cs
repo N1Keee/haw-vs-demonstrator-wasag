@@ -14,5 +14,9 @@ public class HeadphoneState : MonoBehaviour
         {
             transform.gameObject.SetActive(false);
         }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            transform.gameObject.SetActive(true);
+        }
     }
 }
