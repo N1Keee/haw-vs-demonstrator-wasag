@@ -20,12 +20,12 @@ public class Raycaster : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out _hitInfo, 100))
         {
-            Debug.DrawLine(ray.origin, _hitInfo.point, Color.red);
-            Debug.Log(_hitInfo.transform.name);
+            //Debug.DrawLine(ray.origin, _hitInfo.point, Color.red);
+            //Debug.Log(_hitInfo.transform.name);
         }
         else
         {
-            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.green);
+            //Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.green);
         }
     }
 
