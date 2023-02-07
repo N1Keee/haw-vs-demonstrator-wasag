@@ -12,6 +12,7 @@ public class CMFreeLook : MonoBehaviour
     {
         freeLookCamera.m_XAxis.m_InputAxisName = "";
         freeLookCamera.m_YAxis.m_InputAxisName = "";
+        freeLookCamera.m_YAxis.Value = 1;
     }
     void Update()
     {
