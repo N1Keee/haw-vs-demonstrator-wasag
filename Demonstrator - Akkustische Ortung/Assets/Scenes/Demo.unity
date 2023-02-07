@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3116,7 +3116,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3143,8 +3143,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492773314}
-  m_LocalRotation: {x: 0.16454342, y: -0.5963561, z: 0.14107797, w: 0.7729049}
-  m_LocalPosition: {x: -7, y: 6, z: -1}
+  m_LocalRotation: {x: 0.10731475, y: -0.7424999, z: 0.122639135, w: 0.6497208}
+  m_LocalPosition: {x: -2.9144516, y: 5.701316, z: 1.911164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7130,7 +7130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047550393}
-  m_LocalRotation: {x: 0.1419513, y: 0.84360164, z: -0.27157685, w: 0.4409446}
+  m_LocalRotation: {x: 0.1419513, y: 0.84360164, z: -0.27157685, w: 0.44094458}
   m_LocalPosition: {x: -26.205, y: 2.912, z: 6.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7507,7 +7507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   demonstrations:
   - VirtualCamera: {fileID: 1868066768}
-    Instruction: "Tr\xFCmmerhaufen"
+    Instruction: "Bei der akustischen Ortung suchen Sie nach Ger\xE4uschen von \xFCberlebenden
+      Menschen in Tr\xFCmmerhaufen."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7560,7 +7561,9 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - VirtualCamera: {fileID: 1047550394}
-    Instruction: Bodenschallaufnehmer
+    Instruction: "Dies sind die Bodenschallaufnehmer (Geophone). Sie wandeln Ersch\xFCtterungen
+      in akustische Signale um und machen somit Ger\xE4usche aus den Tr\xFCmmern
+      h\xF6rbar."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7625,7 +7628,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 1868066768}
-    Instruction: "Betonst\xFCcke"
+    Instruction: "Suchen Sie nach geeigneten Stellen f\xFCr die Geophone. Beton eignet
+      sich gut, um Ersch\xFCtterungen \xFCber weite Distanzen zu \xFCbertragen."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7666,7 +7670,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - VirtualCamera: {fileID: 776074094}
-    Instruction: Platzieren der Bodenschallaufnehmer
+    Instruction: 'Platzieren Sie die Geophone an den passenden Stellen. '
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7755,7 +7759,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 142533899}
-    Instruction: "Verst\xE4rker anschalten."
+    Instruction: "Schalten Sie das Sp\xFCrger\xE4t ein. Es verst\xE4rkt die Signale,
+      filtert sie bei bedarf, zeigt den Pegel des ausgew\xE4hlten Geophons an und
+      gibt den Ton an die Kopfh\xF6rer aus."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7796,7 +7802,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 696736819}
-    Instruction: "Kopfh\xF6rer aufsetzen."
+    Instruction: "Setzen Sie die Kopfh\xF6rer auf."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7849,7 +7855,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 543176677}
-    Instruction: Filter anschalten.
+    Instruction: Schalten Sie den Filter ein.
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7902,7 +7908,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 543176677}
-    Instruction: Hochpassfilter einstellen.
+    Instruction: Stellen Sie den Hochpassfilter ein.
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7943,7 +7949,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 543176677}
-    Instruction: Tiefpassfilter einstellen.
+    Instruction: Stellen Sie den Tiefpassfilter ein.
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -7984,7 +7990,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 543176677}
-    Instruction: "Kan\xE4le durchgehen und Kanal mit h\xF6chstem Pegel finden."
+    Instruction: "Gehen Sie mit dem Wahlschalter die Kan\xE4le durch und suchen Sie
+      nach dem h\xF6chsten Pegel."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -8001,7 +8008,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 1187896690}
-    Instruction: "An diesem Kanal liegt der h\xF6chste Pegel an."
+    Instruction: "An diesem Kanal liegt der h\xF6chste Pegel an. "
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -8030,7 +8037,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - VirtualCamera: {fileID: 769801016}
-    Instruction: "Zugeh\xF6rigen Bodenschallaufnehmer finden."
+    Instruction: "Machen SIe das zugeh\xF6rige Geophon ausfindig. Nun kann ein Kontaktversuch
+      mithilfe der Wechselsprechsonde unternommen werden."
     OnExecute:
       m_PersistentCalls:
         m_Calls:
@@ -11719,7 +11727,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -11768,7 +11776,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775289969}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11778,8 +11786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 2000, y: 100}
+  m_AnchoredPosition: {x: 0, y: 127.99994}
+  m_SizeDelta: {x: 1600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1808829853
 GameObject:
@@ -12267,7 +12275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868066767}
-  m_LocalRotation: {x: -0.043519683, y: 0.9500485, z: -0.15445432, w: -0.2676896}
+  m_LocalRotation: {x: 0.10731475, y: -0.7424999, z: 0.122639135, w: 0.6497208}
   m_LocalPosition: {x: -31.106346, y: 11.09715, z: 7.574604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14134,7 +14142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 38020326}
-  m_PathPosition: 0
+  m_PathPosition: 0.1607528
   m_PositionUnits: 2
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0

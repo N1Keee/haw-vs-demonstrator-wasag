@@ -137,9 +137,9 @@ public class InteractionManager : MonoBehaviour
     
     private void GenerateRandomGeoInteraction()
     {
-        string instruction = "Finde den Bodenschallaufnehmer bei dem der Pegel am höchsten war.";
-        string error = "Das war nicht der Richtige Bodenschallaufnehmer...";
-        string help = "Der Wahlschalter zeigt den Pegel von einzelnen Bodenschallaufnehmern an. Überprüfe diese nochmal.";
+        string instruction = "Finden Sie den Bodenschallaufnehmer bei dem der Pegel am höchsten ist.";
+        string error = "Das ist nicht der richtige Bodenschallaufnehmer.";
+        string help = "Der Wahlschalter zeigt den Pegel von einzelnen Bodenschallaufnehmern an. Zählen Sie ausgehend vom Verstärker an der Geophonkette entlang.";
         Random rnd = new Random();
         int i = rnd.Next(6);
         _geoIndex = i;
