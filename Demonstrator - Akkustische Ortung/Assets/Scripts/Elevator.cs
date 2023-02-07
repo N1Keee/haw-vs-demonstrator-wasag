@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Elevator : MonoBehaviour
+public class Elevator : MonoBehaviour  // can be deleted
 {
     [SerializeField] private float ySpeed;
     private float _yBorder;

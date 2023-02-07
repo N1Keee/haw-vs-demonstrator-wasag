@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cable : MonoBehaviour
+public class Cable : MonoBehaviour       // can be deleted !!!
 {
     public LineRenderer lineRenderer;
     [SerializeField] private Transform[] positions;

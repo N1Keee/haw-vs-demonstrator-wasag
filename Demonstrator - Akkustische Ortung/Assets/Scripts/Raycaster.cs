@@ -1,12 +1,13 @@
 using UnityEditor;
 using UnityEngine;
 
-public class Raycaster : MonoBehaviour
+public class Raycaster : MonoBehaviour // can be deleted
 {
     public Camera cam;
     private RaycastHit _hitInfo;
     
     // Update is called once per frame
+    /*
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -14,7 +15,7 @@ public class Raycaster : MonoBehaviour
             ExecuteRaycast();
         }
     }
-
+    */
     void ExecuteRaycast()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
