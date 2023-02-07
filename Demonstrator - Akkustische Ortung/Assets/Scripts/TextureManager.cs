@@ -12,12 +12,14 @@ public class TextureManager : MonoBehaviour
     [SerializeField] private GameObject display;
     private MeshRenderer _meshRenderer;
     [SerializeField] private GameObject channelKnob;
+    [SerializeField] private GameObject ampKnob;
 
     private bool _texturesOverwritten = false;
     private bool _localTexture2DsOverwritten = false;
     private GameObject _geophone; // the random geophone from interactionsManager
     [SerializeField] private Texture2D targetTexture; // maxed out channel texture
     [SerializeField] private Texture2D offTexture;
+    [SerializeField] private Texture2D allTexture;
 
     [SerializeField] private InteractionManager interactionManager;  // implement getGeophone();
 
@@ -52,6 +54,7 @@ public class TextureManager : MonoBehaviour
     {
         _meshRenderer = display.transform.GetComponent<MeshRenderer>();
         _meshRenderer.material.mainTexture = offTexture;
+        Debug.Log(ampKnob.transform.rotation.eulerAngles.y);
     }
 
     private void Update()
@@ -64,41 +67,49 @@ public class TextureManager : MonoBehaviour
 
     private void DisplayTexture()
     {
-        if (channelKnob.transform.rotation.eulerAngles.y < 111 && channelKnob.transform.rotation.eulerAngles.y > 85)
+        if (ampKnob.transform.rotation.eulerAngles.y > 170)
+        {
+            if (channelKnob.transform.rotation.eulerAngles.y < 111 && channelKnob.transform.rotation.eulerAngles.y > 85)
+            {
+                _meshRenderer.material.mainTexture = allTexture;
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 138 && channelKnob.transform.rotation.eulerAngles.y > 111)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[0];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 166 && channelKnob.transform.rotation.eulerAngles.y > 138)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[1];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 195 && channelKnob.transform.rotation.eulerAngles.y > 166)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[2];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 225 && channelKnob.transform.rotation.eulerAngles.y > 195)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[3];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 255 && channelKnob.transform.rotation.eulerAngles.y > 225)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[4];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 285 && channelKnob.transform.rotation.eulerAngles.y > 255)
+            {
+                _meshRenderer.material.mainTexture = localTexture2Ds[5];
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 315 && channelKnob.transform.rotation.eulerAngles.y > 285)
+            {
+                _meshRenderer.material.mainTexture = offTexture;
+            }
+            if (channelKnob.transform.rotation.eulerAngles.y < 345 && channelKnob.transform.rotation.eulerAngles.y > 315)
+            {
+                _meshRenderer.material.mainTexture = offTexture;
+            }
+        }
+        else
         {
             _meshRenderer.material.mainTexture = offTexture;
         }
-        if (channelKnob.transform.rotation.eulerAngles.y < 138 && channelKnob.transform.rotation.eulerAngles.y > 111)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[0];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 166 && channelKnob.transform.rotation.eulerAngles.y > 138)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[1];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 195 && channelKnob.transform.rotation.eulerAngles.y > 166)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[2];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 225 && channelKnob.transform.rotation.eulerAngles.y > 195)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[3];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 255 && channelKnob.transform.rotation.eulerAngles.y > 225)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[4];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 285 && channelKnob.transform.rotation.eulerAngles.y > 255)
-        {
-            _meshRenderer.material.mainTexture = localTexture2Ds[5];
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 315 && channelKnob.transform.rotation.eulerAngles.y > 285)
-        {
-            _meshRenderer.material.mainTexture = offTexture;
-        }
-        if (channelKnob.transform.rotation.eulerAngles.y < 345 && channelKnob.transform.rotation.eulerAngles.y > 315)
-        {
-            _meshRenderer.material.mainTexture = offTexture;
-        }
+        
     }
 }
