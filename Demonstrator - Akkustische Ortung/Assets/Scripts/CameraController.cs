@@ -45,14 +45,11 @@ public class CameraController : MonoBehaviour
     public void OverwriteEndPosition()
     {
         _endPos = interactionManager.GetComponent<InteractionManager>().GetPos();
-        Debug.Log(intercom.transform.position);
-        Debug.Log("EndPos: " + _endPos);
     }
     
     public void ActivateEndCamera()
     {
         intercom.transform.position = _endPos;
-        Debug.Log("Intercom pos: " + intercom.transform.position);
         endCamera.Priority = 10;
     }
 }

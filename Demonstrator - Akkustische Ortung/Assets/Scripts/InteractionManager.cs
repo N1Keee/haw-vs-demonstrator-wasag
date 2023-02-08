@@ -150,7 +150,6 @@ public class InteractionManager : MonoBehaviour
 
     public Vector3 GetPos()
     {
-        Debug.Log(geophones[_geoIndex].transform.position);
         return geophones[_geoIndex].transform.position;
     }
     

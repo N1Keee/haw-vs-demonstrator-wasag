@@ -47,14 +47,12 @@ public class TextureManager : MonoBehaviour
         {
             localTexture2Ds[i] = geophones[i].GetComponent<TextureHandler>().GetTexture2D();
         }
-        Debug.Log(localTexture2Ds.Length);
         _localTexture2DsOverwritten = true;
     }
     private void Start()
     {
         _meshRenderer = display.transform.GetComponent<MeshRenderer>();
         _meshRenderer.material.mainTexture = offTexture;
-        Debug.Log(ampKnob.transform.rotation.eulerAngles.y);
     }
 
     private void Update()
