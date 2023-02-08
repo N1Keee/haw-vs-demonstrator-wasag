@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1227,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 258}
+  m_AnchoredPosition: {x: 0, y: 268}
   m_SizeDelta: {x: 1200, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096214707
@@ -1253,7 +1253,8 @@ MonoBehaviour:
   m_text: "Training\nHalten Sie die rechte Maustaste gedr\xFCckt und bewegen Sie
     die Maus um sich umzuschauen. \nKlicken Sie mit der linken Maustaste, um mit
     den richtigen Objekten zu interagieren.\nVerwenden Sie das Scrollwheel, um den
-    Wahlschalter zu drehen.\nWechseln Sie die Ansicht mit den Pfeiltasten oben/unten."
+    Wahlschalter zu drehen.\nWechseln Sie die Ansicht mit den Pfeiltasten oben/unten.\nDr\xFCcken
+    Sie \"H\" f\xFCr Hilfe."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1316,7 +1317,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 47.77478, y: 220.88806, z: 71.5332, w: -153.51062}
+  m_margin: {x: 47.77478, y: 220.88806, z: 71.5332, w: -201.01923}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
